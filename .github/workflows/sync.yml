@@ -46,7 +46,7 @@ jobs:
           set -x
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git remote add up https://github.com/scratchfoundation/scratch-gui.git
+          git remote add up https://github.com/evex-dev/scratch-gui-vite.git
           # git switch -c upstream
           git pull up develop
           git push -u origin upstream
