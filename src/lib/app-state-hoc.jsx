@@ -85,6 +85,7 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 initialState,
                 enhancer
             );
+            console.log(this.store.getState())
         }
         componentDidUpdate (prevProps) {
             if (localesOnly) return;
