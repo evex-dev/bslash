@@ -1,9 +1,35 @@
-import {compose} from 'redux';
+import {compose, type Store} from 'redux';
 import MainGUI, {HashParserHOC, AppStateHOC} from '.'
 import React from 'react'
 import type { GUIComponentProps, CloudManagerTypes } from './gui-types'
+import { useEffect } from 'react'
+import { SET_SESSION } from './reducers/session'
+import { CHANGE_OPTIONS_TYPE, type BslashOptions } from './reducers/bslash'
 
-export interface GUIProps extends Partial<GUIComponentProps>, CloudManagerTypes {
+export type { BslashOptions }
+
+const getStore = (): Store<{}> => {
+  // @ts-ignore
+  return AppStateHOC.store
+}
+
+export const setSession = () => {
+  const store = getStore()
+  store.dispatch({ type: '' })
+}
+
+export interface Session {
+    user: {
+        username: string
+        thumbnailUrl: string
+    }
+}
+
+export interface GUIOptions extends Partial<GUIComponentProps>, CloudManagerTypes {}
+export interface GUIProps {
+    coreOptions: GUIOptions
+    session?: Session
+    bslashOptions?: Partial<BslashOptions>
 }
 
 export const GUI = (props: GUIProps) => {
@@ -13,14 +39,16 @@ export const GUI = (props: GUIProps) => {
     // @ts-ignore
     )(MainGUI)
 
-    // TODO a hack for testing the backpack, allow backpack host to be set by url param
-    const backpackHostMatches = window.location.href.match(/[?&]backpack_host=([^&]*)&?/);
-    const backpackHost = backpackHostMatches ? backpackHostMatches[1] : null;
+    useEffect(() => {
+        if (props.session) {
+            getStore().dispatch({ type: SET_SESSION, session: props.session })
+        }
+    }, [props.session])
+    useEffect(() => {
+        if (props.bslashOptions) {
+            getStore().dispatch({ type: CHANGE_OPTIONS_TYPE, options: props.bslashOptions })
+        }
+    }, [props.bslashOptions])
 
-    if (import.meta.env.NODE_ENV === 'production' && typeof window === 'object') {
-        // Warn before navigating away
-        window.onbeforeunload = () => true;
-    }
-
-    return <WrappedGui {...props} />
+    return <WrappedGui {...props.coreOptions} />
 }

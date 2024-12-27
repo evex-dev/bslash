@@ -25,10 +25,12 @@ const AccountNavComponent = ({
     isRtl,
     isStudent,
     menuBarMenuClassName,
+    mystuffURL,
     onClick,
     onClose,
     onLogOut,
     profileUrl,
+    accountSettingsURL,
     thumbnailUrl,
     username
 }) => (
@@ -71,7 +73,7 @@ const AccountNavComponent = ({
                     id="gui.accountMenu.profile"
                 />
             </MenuItemContainer>
-            <MenuItemContainer href="/mystuff/">
+            <MenuItemContainer href={mystuffURL}>
                 <FormattedMessage
                     defaultMessage="My Stuff"
                     description="Text to link to list of my projects, in the account navigation menu"
@@ -96,7 +98,7 @@ const AccountNavComponent = ({
                     />
                 </MenuItemContainer>
             ) : null}
-            <MenuItemContainer href="/accounts/settings/">
+            <MenuItemContainer href={accountSettingsURL}>
                 <FormattedMessage
                     defaultMessage="Account settings"
                     description="Text to link to my account settings, in the account navigation menu"
@@ -124,12 +126,14 @@ AccountNavComponent.propTypes = {
     isRtl: PropTypes.bool,
     isStudent: PropTypes.bool,
     menuBarMenuClassName: PropTypes.string,
+    mystuffURL: PropTypes.string,
     onClick: PropTypes.func,
     onClose: PropTypes.func,
     onLogOut: PropTypes.func,
     profileUrl: PropTypes.string,
+    accountSettingsURL: PropTypes.string,
     thumbnailUrl: PropTypes.string,
-    username: PropTypes.string
+    username: PropTypes.string,
 };
 
 export default AccountNavComponent;

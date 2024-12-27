@@ -29,21 +29,27 @@ AccountNav.propTypes = {
     isStudent: PropTypes.bool,
     profileUrl: PropTypes.string,
     thumbnailUrl: PropTypes.string,
-    username: PropTypes.string
+    username: PropTypes.string,
+    mystuffURL: PropTypes.string,
+    accountSettingsURL: PropTypes.string,
 };
 
-const mapStateToProps = state => ({
-    classroomId: state.session && state.session.session && state.session.session.user ?
-        state.session.session.user.classroomId : '',
-    isEducator: state.session && state.session.permissions && state.session.permissions.educator,
-    isStudent: state.session && state.session.permissions && state.session.permissions.student,
-    profileUrl: state.session && state.session.session && state.session.session.user ?
-        `/users/${state.session.session.user.username}` : '',
-    thumbnailUrl: state.session && state.session.session && state.session.session.user ?
-        state.session.session.user.thumbnailUrl : null,
-    username: state.session && state.session.session && state.session.session.user ?
-        state.session.session.user.username : ''
-});
+const mapStateToProps = state => {
+    return {
+        classroomId: state.session && state.session.session && state.session.session.user ?
+            state.session.session.user.classroomId : '',
+        isEducator: state.session && state.session.permissions && state.session.permissions.educator,
+        isStudent: state.session && state.session.permissions && state.session.permissions.student,
+        profileUrl: state.session && state.session.session && state.session.session.user ?
+            state.bslash.getProfileURL(state.session.session.user.username) : '',
+        thumbnailUrl: state.session && state.session.session && state.session.session.user ?
+            state.session.session.user.thumbnailUrl : null,
+        username: state.session && state.session.session && state.session.session.user ?
+            state.session.session.user.username : '',
+        mystuffURL: state.bslash.getMystuffURL(),
+        accountSettingsURL: state.bslash.getAccountSettingsURL()
+    }
+};
 
 const mapDispatchToProps = () => ({});
 
