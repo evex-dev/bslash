@@ -8,6 +8,8 @@ export default function App () {
       onLogOut() {
         console.log('Logout')
       },
+      canSave: true,
+      enableCommunity: true,
     }}
     session={{
       user: {
@@ -16,7 +18,8 @@ export default function App () {
       }
     }}
     bslashOptions={{
-      getProfileURL: () => 'https://example.com'
+      getProfileURL: () => 'https://example.com',
+      projectId: '665'
     }}
   />
 }

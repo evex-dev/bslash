@@ -5,17 +5,13 @@ import type { GUIComponentProps, CloudManagerTypes } from './gui-types'
 import { useEffect } from 'react'
 import { SET_SESSION } from './reducers/session'
 import { CHANGE_OPTIONS_TYPE, type BslashOptions } from './reducers/bslash'
+import { setProjectId } from './reducers/project-state';
 
 export type { BslashOptions }
 
 const getStore = (): Store<{}> => {
   // @ts-ignore
   return AppStateHOC.store
-}
-
-export const setSession = () => {
-  const store = getStore()
-  store.dispatch({ type: '' })
 }
 
 export interface Session {
@@ -40,6 +36,12 @@ export const GUI = (props: GUIProps) => {
     )(MainGUI)
 
     useEffect(() => {
+        getStore().subscribe(() => {
+            console.log(getStore().getState().scratchGui.projectState)
+        })
+    }, [])
+
+    useEffect(() => {
         if (props.session) {
             getStore().dispatch({ type: SET_SESSION, session: props.session })
         }
@@ -49,6 +51,9 @@ export const GUI = (props: GUIProps) => {
             getStore().dispatch({ type: CHANGE_OPTIONS_TYPE, options: props.bslashOptions })
         }
     }, [props.bslashOptions])
+    useEffect(() => {
+        getStore().dispatch(setProjectId(props.bslashOptions?.projectId))
+    }, [props.bslashOptions?.projectId])
 
     return <WrappedGui {...props.coreOptions} />
 }
