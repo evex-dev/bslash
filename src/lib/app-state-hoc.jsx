@@ -15,6 +15,8 @@ const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
 import * as guiRedux from '../reducers/gui.js';
 import * as ScratchPaint from '@evex-dev/scratch-paint';
+import * as sessionRedux from '../reducers/session.js'
+import * as bslashRedux from '../reducers/bslash'
 
 /*
  * Higher Order Component to provide redux state. If an `intl` prop is provided
@@ -71,16 +73,20 @@ const AppStateHOC = function (WrappedComponent, localesOnly) {
                 reducers = {
                     locales: localesReducer,
                     scratchGui: guiReducer,
-                    scratchPaint: ScratchPaintReducer
+                    scratchPaint: ScratchPaintReducer,
+                    session: sessionRedux.default,
+                    bslash: bslashRedux.default
                 };
                 initialState = {
                     locales: initializedLocales,
-                    scratchGui: initializedGui
+                    scratchGui: initializedGui,
+                    session: sessionRedux.sessionInitialState,
+                    bslash: bslashRedux.bslashInitialState
                 };
                 enhancer = composeEnhancers(guiMiddleware);
             }
             const reducer = combineReducers(reducers);
-            this.store = createStore(
+            AppStateHOC.store = this.store = createStore(
                 reducer,
                 initialState,
                 enhancer

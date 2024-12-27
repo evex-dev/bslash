@@ -10,13 +10,13 @@ import ErrorBoundaryHOC from '../lib/error-boundary-hoc.jsx';
 import {
     getIsError,
     getIsShowingProject
-} from '../reducers/project-state';
+} from '../reducers/project-state.js';
 import {
     activateTab,
     BLOCKS_TAB_INDEX,
     COSTUMES_TAB_INDEX,
     SOUNDS_TAB_INDEX
-} from '../reducers/editor-tab';
+} from '../reducers/editor-tab.js';
 
 import {
     closeCostumeLibrary,
@@ -24,7 +24,7 @@ import {
     closeTelemetryModal,
     openExtensionLibrary,
     closeDebugModal
-} from '../reducers/modals';
+} from '../reducers/modals.js';
 
 import FontLoaderHOC from '../lib/font-loader-hoc.jsx';
 import LocalizationHOC from '../lib/localization-hoc.jsx';
@@ -33,7 +33,7 @@ import ProjectFetcherHOC from '../lib/project-fetcher-hoc.jsx';
 import TitledHOC from '../lib/titled-hoc.jsx';
 import ProjectSaverHOC from '../lib/project-saver-hoc.jsx';
 import QueryParserHOC from '../lib/query-parser-hoc.jsx';
-import storage from '../lib/storage';
+import storage from '../lib/storage.js';
 import vmListenerHOC from '../lib/vm-listener-hoc.jsx';
 import vmManagerHOC from '../lib/vm-manager-hoc.jsx';
 import cloudManagerHOC from '../lib/cloud-manager-hoc.jsx';

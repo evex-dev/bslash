@@ -1,0 +1,75 @@
+import { intlShape } from 'react-intl';
+import type VM from 'scratch-vm';
+
+export interface CloudManagerTypes {
+    canModifyCloudData: boolean
+}
+export interface GUIComponentProps {
+    accountNavOpen: boolean;
+    activeTabIndex: number;
+    authorId: string | false;
+    authorThumbnailUrl: string;
+    authorUsername: string | false;
+    backdropLibraryVisible: boolean;
+    backpackHost: string;
+    backpackVisible: boolean;
+    basePath: string;
+    blocksTabVisible: boolean;
+    blocksId: string;
+    canChangeLanguage: boolean;
+    canChangeTheme: boolean;
+    canCreateCopy: boolean;
+    canCreateNew: boolean;
+    canEditTitle: boolean;
+    canManageFiles: boolean;
+    canRemix: boolean;
+    canSave: boolean;
+    canShare: boolean;
+    canUseCloud: boolean;
+    cardsVisible: boolean;
+    children: unknown;
+    costumeLibraryVisible: boolean;
+    costumesTabVisible: boolean;
+    debugModalVisible: boolean;
+    enableCommunity: boolean;
+    intl: typeof intlShape.isRequired;
+    isCreating: boolean;
+    isFullScreen: boolean;
+    isPlayerOnly: boolean;
+    isRtl: boolean;
+    isShared: boolean;
+    isTotallyNormal: boolean;
+    loading: boolean;
+    logo: string;
+    onActivateCostumesTab?: () => void;
+    onActivateSoundsTab?: () => void;
+    onActivateTab?: () => void;
+    onClickAccountNav?: () => void;
+    onClickLogo?: () => void;
+    onCloseAccountNav?: () => void;
+    onExtensionButtonClick?: () => void;
+    onLogOut?: () => void;
+    onOpenRegistration?: () => void;
+    onRequestCloseBackdropLibrary?: () => void;
+    onRequestCloseCostumeLibrary?: () => void;
+    onRequestCloseDebugModal?: () => void;
+    onRequestCloseTelemetryModal?: () => void;
+    onSeeCommunity?: () => void;
+    onShare?: () => void;
+    onShowPrivacyPolicy?: () => void;
+    onStartSelectingFileUpload?: () => void;
+    onTabSelect?: () => void;
+    onTelemetryModalCancel?: () => void;
+    onTelemetryModalOptIn?: () => void;
+    onTelemetryModalOptOut?: () => void;
+    onToggleLoginOpen?: () => void;
+    renderLogin?: () => void;
+    showComingSoon: boolean;
+    soundsTabVisible: boolean;
+    stageSizeMode: 'large' | 'small';
+    targetIsStage: boolean;
+    telemetryModalVisible: boolean;
+    theme: string;
+    tipsLibraryVisible: boolean;
+    vm: VM;
+}
