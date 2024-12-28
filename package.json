@@ -1,7 +1,8 @@
 {
-  "name": "bslash",
-  "version": "5.1.12",
+  "name": "@evex-dev/bslash",
+  "version": "0.1.0",
   "type": "module",
+  "private": false,
   "description": "Graphical User Interface for creating and running Scratch 3.0 projects",
   "author": "Massachusetts Institute of Technology",
   "license": "AGPL-3.0-only",
