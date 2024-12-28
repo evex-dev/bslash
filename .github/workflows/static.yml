@@ -39,7 +39,7 @@ jobs:
       - name: Install deps
         run: bun i
       - name: Build
-        run: bun run build --base="${{ steps.pages.outputs.base_path }}/"
+        run: bun run build:playground --base="${{ steps.pages.outputs.base_path }}/"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

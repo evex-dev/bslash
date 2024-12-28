@@ -12,7 +12,12 @@ import { storageStore, type ProjectSaveMeta } from './storage';
  * @property {?string} params.title the title of the project.
  * @return {Promise} A promise that resolves when the network request resolves.
  */
-export default async function (projectId: number | string | null | undefined, vmState: string, params) {
+export default async function (projectId: number | string | null | undefined, vmState: string, params: {
+    originalId?: number | string,
+    isCopy?: boolean,
+    isRemix?: boolean,
+    title?: string
+}) {
     const isCreatingProject = projectId === null || typeof projectId === 'undefined';
     const meta: ProjectSaveMeta = {
         isCopy: Object.prototype.hasOwnProperty.call(params, 'isCopy'),

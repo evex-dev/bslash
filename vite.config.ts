@@ -1,4 +1,4 @@
-import { defineConfig, ResolvedConfig, type Plugin } from 'vite'
+import { defineConfig, type ResolvedConfig, type Plugin, type UserConfig } from 'vite'
 import { reactVirtualized } from './plugins/reactVirtualized.ts'
 import * as path from 'node:path'
 import react from '@vitejs/plugin-react-swc'
@@ -59,33 +59,54 @@ const scratchGuiPlugin = (): Plugin => {
   }
 }
 
-export default defineConfig({
-  plugins: [
-    reactVirtualized(),
-    scratchGuiPlugin(),
-    react()
-  ],
-  css: {
-    modules: {
-      localsConvention: 'camelCaseOnly'
-    }
-  },
-  esbuild: {
-    define: {
-      global: 'globalThis',
-      'process': `{ "env": {} }`
+export default defineConfig((env) => {
+  const base: UserConfig = {
+    plugins: [
+      reactVirtualized(),
+      scratchGuiPlugin(),
+      react()
+    ],
+    css: {
+      modules: {
+        localsConvention: 'camelCaseOnly'
+      }
     },
-    target: 'esnext'
-  },
-  build: {
-    target: 'esnext'
-  },
-  optimizeDeps: {
-    esbuildOptions: {
+    esbuild: {
       define: {
         global: 'globalThis',
         'process': `{ "env": {} }`
+      },
+      target: 'esnext'
+    },
+    build: process.env.PLAYGROUND ? {
+      target: 'esnext',
+    } :{
+      target: 'esnext',
+      lib: {
+        entry: 'src/mod.tsx',
+        formats: ['es'],
+        fileName(format, entryName) {
+          return 'mod.js'
+        },
+      },
+      rollupOptions: {
+        external: [
+          'react',
+          'react-dom',
+          'react-virtualized',
+          'redux',
+          'react-redux'
+        ],
+      }
+    },
+    optimizeDeps: {
+      esbuildOptions: {
+        define: {
+          global: 'globalThis',
+          'process': `{ "env": {} }`
+        }
       }
     }
   }
+  return base
 })

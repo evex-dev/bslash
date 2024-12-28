@@ -1,4 +1,4 @@
-import { Action } from "redux";
+import type { Action } from "redux";
 
 export const CHANGE_OPTIONS_TYPE = 'bslash/CHANGE_OPTIONS'
 export interface BslashOptions {

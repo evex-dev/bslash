@@ -47,18 +47,16 @@ class Storage extends ScratchStorage {
     constructor() {
         super()
     }
-    translator: (m: string, v?: unknown) => string
-    setProjectHost(host) {
-    }
-    setProjectToken(token) {
-    }
-    setAssetHost(host) {
-    }
-    setTranslatorFunction(fn) {
+    translator?: (m: string, v?: unknown) => string
+    setProjectHost(host: string) {}
+    setProjectToken(token: string) {}
+    setAssetHost(host: string) {
+}
+    setTranslatorFunction(fn: (m: string, v?: unknown) => string) {
         this.translator = fn
     }
     addOfficialScratchWebStores() {}
-    async load(type, assetId, format) {
+    async load(type: AssetType, assetId: string, format: DataFormat) {
         switch(type.name) {
             case 'Project': {
                 const blob = await storageStore.loadProject(assetId, this)
@@ -87,7 +85,7 @@ class Storage extends ScratchStorage {
         }
         return null
     }
-    get (assetId) {
+    get (assetId: string | number) {
         const got = cacheStore.get(assetId)
         if (got) {
             return got
