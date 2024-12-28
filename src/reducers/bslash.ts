@@ -19,7 +19,7 @@ export default function reducer(state: BslashOptions = bslashInitialState, actio
     return state
 }
 export const bslashInitialState: BslashOptions = {
-  getProfileURL: (name) => 'javascript:alert("There is no profile.")',
-  getMystuffURL: () => 'javascript:alert("There is no my stuff.")',
-  getAccountSettingsURL: () => 'javascript:alert("There is no settings.")'
+  getProfileURL: (name) => '#',
+  getMystuffURL: () => '#',
+  getAccountSettingsURL: () => '#'
 }

@@ -9,7 +9,6 @@ const getCostumeUrl = (function () {
     let cachedUrl;
 
     return function (asset) {
-
         if (cachedAssetId === asset.assetId) {
             return cachedUrl;
         }
