@@ -19,6 +19,10 @@ jobs:
         uses: denoland/setup-deno@v2.0.0
       - name: Setup Bun
         uses: oven-sh/setup-bun@v2
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20.x'
+          registry-url: 'https://registry.npmjs.org'
       - name: Install deps
         run: bun i
       - name: Build
@@ -29,6 +33,6 @@ jobs:
           echo "Updating package.json version to $VERSION"
           npm version --no-git-tag-version $VERSION  
       - name: Publish to npm
-        run: npm publish
+        run: npm publish --provenance --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_SECRET }}
