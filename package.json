@@ -1,6 +1,6 @@
 {
   "name": "@evex-dev/bslash",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "type": "module",
   "private": false,
   "description": "Graphical User Interface for creating and running Scratch 3.0 projects",
@@ -34,11 +34,11 @@
   "dependencies": {
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
-    "react-virtualized": "^9.22.5",
     "redux": "^3.7.2",
     "react-redux": "^5.1.2"
   },
   "devDependencies": {
+    "react-virtualized": "^9.22.5",
     "typescript": "^5.7.2",
     "react-intl": "^2.9.0",
     "@evex-dev/scratch-paint": "^0.1.1",

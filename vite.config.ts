@@ -93,7 +93,6 @@ export default defineConfig((env) => {
         external: [
           'react',
           'react-dom',
-          'react-virtualized',
           'redux',
           'react-redux'
         ],
