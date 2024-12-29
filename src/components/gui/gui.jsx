@@ -137,6 +137,7 @@ const GUIComponent = props => {
         vm,
         ...componentProps
     } = omit(props, 'dispatch');
+
     if (children) {
         return <Box {...componentProps}>{children}</Box>;
     }

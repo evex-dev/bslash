@@ -1,7 +1,7 @@
 import App from './app'
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 const div = document.createElement('div')
 div.style.height = '100dvh'
 document.body.append(div)
-ReactDOM.render(<App />, div)
+createRoot(div).render(<App />)
