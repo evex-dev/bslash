@@ -33,7 +33,9 @@
   },
   "dependencies": {
     "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
     "redux": "^3.7.2",
     "react-redux": "^5.1.2",
     "react-intl": "^2.9.0",
@@ -45,9 +47,7 @@
     "react-style-proptype": "^3.2.2",
     "react-tabs": "^2.3.1",
     "react-tooltip": "^4.5.1",
-    "redux-throttle": "^0.1.1"
-  },
-  "devDependencies": {
+    "redux-throttle": "^0.1.1",
     "prop-types": "^15.8.1",
     "@types/react": "^19.0.2",
     "@types/react-dom": "^19.0.2",
