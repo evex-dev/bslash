@@ -89,6 +89,7 @@ export default defineConfig((env) => {
           return 'mod.js'
         },
       },
+      minify: false,
       rollupOptions: {
         external: [
           'react',
