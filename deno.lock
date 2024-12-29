@@ -6,6 +6,7 @@
     "npm:@microbit/microbit-universal-hex@~0.2.2": "0.2.2_tslib@2.8.1",
     "npm:@turbowarp/types@^0.0.12": "0.0.12",
     "npm:@types/bun@latest": "1.1.14",
+    "npm:@types/react-dom@^19.0.2": "19.0.2_@types+react@19.0.2",
     "npm:@types/react@^19.0.2": "19.0.2",
     "npm:@vitejs/plugin-react-swc@^3.7.2": "3.7.2_vite@6.0.6",
     "npm:balance-text@^3.3.1": "3.3.1",
@@ -32,18 +33,19 @@
     "npm:prop-types@^15.8.1": "15.8.1",
     "npm:query-string@^5.1.1": "5.1.1",
     "npm:react-contextmenu@^2.14.0": "2.14.0_prop-types@15.8.1_react@16.14.0_react-dom@16.14.0__react@16.14.0",
+    "npm:react-dom@19": "19.0.0_react@19.0.0",
     "npm:react-dom@^16.14.0": "16.14.0_react@16.14.0",
     "npm:react-draggable@^3.3.2": "3.3.2",
     "npm:react-intl@^2.9.0": "2.9.0_prop-types@15.8.1_react@16.14.0",
-    "npm:react-modal@^3.16.3": "3.16.3_react@16.14.0_react-dom@16.14.0__react@16.14.0",
+    "npm:react-modal@^3.16.3": "3.16.3_react@19.0.0_react-dom@16.14.0__react@16.14.0",
     "npm:react-popover@~0.5.10": "0.5.10",
     "npm:react-redux@^5.1.2": "5.1.2_react@16.14.0_redux@3.7.2",
     "npm:react-responsive@5": "5.0.0_react@16.14.0",
     "npm:react-style-proptype@^3.2.2": "3.2.2",
     "npm:react-tabs@^2.3.1": "2.3.1_react@16.14.0",
-    "npm:react-tooltip@^4.5.1": "4.5.1_react@16.14.0_react-dom@16.14.0__react@16.14.0",
+    "npm:react-tooltip@^4.5.1": "4.5.1_react@19.0.0_react-dom@16.14.0__react@16.14.0",
     "npm:react-virtualized@^9.22.5": "9.22.5_react@16.14.0_react-dom@16.14.0__react@16.14.0",
-    "npm:react@^16.14.0": "16.14.0",
+    "npm:react@19": "19.0.0",
     "npm:redux-throttle@~0.1.1": "0.1.1",
     "npm:redux@^3.7.2": "3.7.2",
     "npm:regenerator-runtime@~0.14.1": "0.14.1",
@@ -153,8 +155,8 @@
         "lodash.omit",
         "minilog",
         "parse-color",
-        "react",
-        "react-dom",
+        "react@16.14.0",
+        "react-dom@16.14.0_react@16.14.0",
         "react-popover",
         "react-redux",
         "react-responsive",
@@ -323,6 +325,12 @@
       "integrity": "sha512-FDuKUJQm/ju9fT/SeX/6+gBzoPzlVCzfzmGkwKvRHQVxi4BntVbyIwf6a4Xn62mrvndLiml6z/UBXIdEVjQLXg==",
       "dependencies": [
         "undici-types@6.19.8"
+      ]
+    },
+    "@types/react-dom@19.0.2_@types+react@19.0.2": {
+      "integrity": "sha512-c1s+7TKFaDRRxr1TxccIX2u7sfCnc3RxkVyBIUA2lCpyqCF+QoAwQ/CBg7bsMdVwP120HEH143VQezKtef5nCg==",
+      "dependencies": [
+        "@types/react"
       ]
     },
     "@types/react@19.0.2": {
@@ -4271,8 +4279,8 @@
         "classnames",
         "object-assign",
         "prop-types",
-        "react",
-        "react-dom"
+        "react@16.14.0",
+        "react-dom@16.14.0_react@16.14.0"
       ]
     },
     "react-dom@16.14.0_react@16.14.0": {
@@ -4281,8 +4289,15 @@
         "loose-envify",
         "object-assign",
         "prop-types",
-        "react",
-        "scheduler"
+        "react@16.14.0",
+        "scheduler@0.19.1"
+      ]
+    },
+    "react-dom@19.0.0_react@19.0.0": {
+      "integrity": "sha512-4GV5sHFG0e/0AD4X+ySy6UJd3jVl1iNsNHdpad0qhABJ11twS3TTBnseqsKurKcsNqCEFeGL3uLpVChpIO3QfQ==",
+      "dependencies": [
+        "react@19.0.0",
+        "scheduler@0.25.0"
       ]
     },
     "react-draggable@3.3.2": {
@@ -4301,7 +4316,7 @@
         "intl-relativeformat",
         "invariant",
         "prop-types",
-        "react"
+        "react@16.14.0"
       ]
     },
     "react-is@16.13.1": {
@@ -4310,13 +4325,13 @@
     "react-lifecycles-compat@3.0.4": {
       "integrity": "sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA=="
     },
-    "react-modal@3.16.3_react@16.14.0_react-dom@16.14.0__react@16.14.0": {
+    "react-modal@3.16.3_react@19.0.0_react-dom@16.14.0__react@16.14.0": {
       "integrity": "sha512-yCYRJB5YkeQDQlTt17WGAgFJ7jr2QYcWa1SHqZ3PluDmnKJ/7+tVU+E6uKyZ0nODaeEj+xCpK4LcSnKXLMC0Nw==",
       "dependencies": [
         "exenv",
         "prop-types",
-        "react",
-        "react-dom",
+        "react@19.0.0",
+        "react-dom@16.14.0_react@16.14.0",
         "react-lifecycles-compat",
         "warning"
       ]
@@ -4338,7 +4353,7 @@
         "invariant",
         "loose-envify",
         "prop-types",
-        "react",
+        "react@16.14.0",
         "react-is",
         "react-lifecycles-compat",
         "redux"
@@ -4350,7 +4365,7 @@
         "hyphenate-style-name",
         "matchmediaquery",
         "prop-types",
-        "react"
+        "react@16.14.0"
       ]
     },
     "react-style-proptype@3.2.2": {
@@ -4364,15 +4379,15 @@
       "dependencies": [
         "classnames",
         "prop-types",
-        "react"
+        "react@16.14.0"
       ]
     },
-    "react-tooltip@4.5.1_react@16.14.0_react-dom@16.14.0__react@16.14.0": {
+    "react-tooltip@4.5.1_react@19.0.0_react-dom@16.14.0__react@16.14.0": {
       "integrity": "sha512-Zo+CSFUGXar1uV+bgXFFDe7VeS2iByeIp5rTgTcc2HqtuOS5D76QapejNNfx320MCY91TlhTQat36KGFTqgcvw==",
       "dependencies": [
         "prop-types",
-        "react",
-        "react-dom",
+        "react@19.0.0",
+        "react-dom@16.14.0_react@16.14.0",
         "uuid@7.0.3"
       ]
     },
@@ -4384,8 +4399,8 @@
         "dom-helpers",
         "loose-envify",
         "prop-types",
-        "react",
-        "react-dom",
+        "react@16.14.0",
+        "react-dom@16.14.0_react@16.14.0",
         "react-lifecycles-compat"
       ]
     },
@@ -4396,6 +4411,9 @@
         "object-assign",
         "prop-types"
       ]
+    },
+    "react@19.0.0": {
+      "integrity": "sha512-V8AVnmPIICiWpGfm6GLzCR/W5FXLchHop40W4nXBmdlEceh16rCN8O8LNWm5bh5XUX91fh7KpA+W0TgMKmgTpQ=="
     },
     "read-package-json@2.1.2": {
       "integrity": "sha512-D1KmuLQr6ZSJS0tW8hf3WGpRlwszJOXZ3E8Yd/DNRaM5d+1wVRZdHlpGBLAuovjr28LbWvjpWkBHMxpRGGjzNA==",
@@ -4668,6 +4686,9 @@
         "loose-envify",
         "object-assign"
       ]
+    },
+    "scheduler@0.25.0": {
+      "integrity": "sha512-xFVuu11jh+xcO7JOAGJNOXld8/TcEHK/4CituBUeUb5hqxJLj9YuemAEuvm9gQ/+pgXYfbQuqAkiYu+u7YEsNA=="
     },
     "schema-utils@0.4.7_ajv@6.12.6": {
       "integrity": "sha512-v/iwU6wvwGK8HbU9yi3/nhGzP0yGSuhQMzL6ySiec1FSrZZDkhm4noOSWzrNFo/jEc+SJY6jRTwuwbSXJPDUnQ==",
@@ -5818,6 +5839,7 @@
         "npm:@microbit/microbit-universal-hex@~0.2.2",
         "npm:@turbowarp/types@^0.0.12",
         "npm:@types/bun@latest",
+        "npm:@types/react-dom@^19.0.2",
         "npm:@types/react@^19.0.2",
         "npm:@vitejs/plugin-react-swc@^3.7.2",
         "npm:balance-text@^3.3.1",
@@ -5843,7 +5865,7 @@
         "npm:prop-types@^15.8.1",
         "npm:query-string@^5.1.1",
         "npm:react-contextmenu@^2.14.0",
-        "npm:react-dom@^16.14.0",
+        "npm:react-dom@19",
         "npm:react-draggable@^3.3.2",
         "npm:react-intl@^2.9.0",
         "npm:react-modal@^3.16.3",
@@ -5854,7 +5876,7 @@
         "npm:react-tabs@^2.3.1",
         "npm:react-tooltip@^4.5.1",
         "npm:react-virtualized@^9.22.5",
-        "npm:react@^16.14.0",
+        "npm:react@19",
         "npm:redux-throttle@~0.1.1",
         "npm:redux@^3.7.2",
         "npm:regenerator-runtime@~0.14.1",

@@ -2,6 +2,7 @@ import { defineConfig, type ResolvedConfig, type Plugin, type UserConfig } from 
 import { reactVirtualized } from './plugins/reactVirtualized.ts'
 import * as path from 'node:path'
 import react from '@vitejs/plugin-react-swc'
+import packageJSON from './package.json' with { type: 'json' }
 
 const scratchGuiPlugin = (): Plugin => {
   let resolvedConfig!: ResolvedConfig
@@ -91,12 +92,7 @@ export default defineConfig((env) => {
       },
       minify: false,
       rollupOptions: {
-        external: [
-          'react',
-          'react-dom',
-          'redux',
-          'react-redux'
-        ],
+        external: Object.keys(packageJSON.dependencies)
       }
     },
     optimizeDeps: {
