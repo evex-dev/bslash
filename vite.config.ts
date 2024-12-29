@@ -92,7 +92,10 @@ export default defineConfig((env) => {
       },
       minify: false,
       rollupOptions: {
-        external: Object.keys(packageJSON.dependencies)
+        external: [
+          ...Object.keys(packageJSON.dependencies),
+          'react/jsx-runtime', 'react-dom/client'
+        ]
       }
     },
     optimizeDeps: {

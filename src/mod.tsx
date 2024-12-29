@@ -7,17 +7,13 @@ import { SET_SESSION } from './reducers/session'
 import { CHANGE_OPTIONS_TYPE, type BslashOptions } from './reducers/bslash'
 import { setProjectId } from './reducers/project-state';
 import { storageStore, type StorageFunctions } from './lib/storage'
+export { default as createDefaultProjectJSON } from './lib/default-project/project-data'
 
 export type { BslashOptions }
 
 const getStore = (): Store<{}> => {
   // @ts-ignore
   return AppStateHOC.store
-}
-
-export const setSession = () => {
-  const store = getStore()
-  store.dispatch({ type: '' })
 }
 
 export interface Session {

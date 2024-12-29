@@ -5879,7 +5879,6 @@
         "npm:react@19",
         "npm:redux-throttle@~0.1.1",
         "npm:redux@^3.7.2",
-        "npm:regenerator-runtime@~0.14.1",
         "npm:scratch-audio@^2.0.36",
         "npm:scratch-l10n@^5.0.61",
         "npm:scratch-render-fonts@^1.0.147",
