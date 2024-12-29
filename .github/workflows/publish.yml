@@ -3,6 +3,7 @@ name: Publish to npm
 
 on:
   release:
+    published:
 
 permissions:
   contents: read
@@ -31,7 +32,7 @@ jobs:
         run: |
           VERSION=${{ github.event.release.tag_name }}
           echo "Updating package.json version to $VERSION"
-          npm version --no-git-tag-version $VERSION  
+          npm version --no-git-tag-version $VERSION
       - name: Publish to npm
         run: npm publish --provenance --access public
         env:
