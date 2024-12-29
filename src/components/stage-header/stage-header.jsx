@@ -1,4 +1,4 @@
-import {defineMessages, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, injectIntl} from 'react-intl';
 import PropTypes from 'prop-types';
 import React from 'react';
 import {connect} from 'react-redux';
@@ -167,7 +167,7 @@ const mapStateToProps = state => ({
 });
 
 StageHeaderComponent.propTypes = {
-    intl: intlShape,
+    intl: PropTypes.any,
     isFullScreen: PropTypes.bool.isRequired,
     isPlayerOnly: PropTypes.bool.isRequired,
     onKeyPress: PropTypes.func.isRequired,

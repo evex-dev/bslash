@@ -1,4 +1,4 @@
-import {defineMessages, FormattedMessage, injectIntl, intlShape} from 'react-intl';
+import {defineMessages, FormattedMessage, injectIntl} from 'react-intl';
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
@@ -177,7 +177,7 @@ DeleteConfirmationPrompt.propTypes = {
     relativeElemRef: PropTypes.object,
     entityType: PropTypes.string,
     modalPosition: PropTypes.string,
-    intl: intlShape.isRequired
+    intl: PropTypes.any.isRequired
 };
 
 const DeleteConfirmationPromptIntl = injectIntl(DeleteConfirmationPrompt);

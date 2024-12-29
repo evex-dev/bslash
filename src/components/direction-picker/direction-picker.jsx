@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Popover from 'react-popover';
-import {injectIntl, intlShape, defineMessages, FormattedMessage} from 'react-intl';
+import {injectIntl, defineMessages, FormattedMessage} from 'react-intl';
 
 import Label from '../forms/label.jsx';
 import Input from '../forms/input.jsx';
@@ -109,7 +109,7 @@ const DirectionPicker = props => (
 DirectionPicker.propTypes = {
     direction: PropTypes.number,
     disabled: PropTypes.bool.isRequired,
-    intl: intlShape,
+    intl: PropTypes.any,
     labelAbove: PropTypes.bool,
     onChangeDirection: PropTypes.func.isRequired,
     onClickAllAround: PropTypes.func.isRequired,

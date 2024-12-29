@@ -1,7 +1,7 @@
 import bindAll from 'lodash.bindall';
 import React from 'react';
 import PropTypes from 'prop-types';
-import {defineMessages, intlShape, injectIntl} from 'react-intl';
+import {defineMessages, injectIntl} from 'react-intl';
 import {connect} from 'react-redux';
 import log from '../lib/log';
 import sharedMessages from './shared-messages';
@@ -212,7 +212,7 @@ const SBFileUploaderHOC = function (WrappedComponent) {
         canSave: PropTypes.bool,
         cancelFileUpload: PropTypes.func,
         closeFileMenu: PropTypes.func,
-        intl: intlShape.isRequired,
+        intl: PropTypes.any.isRequired,
         isLoadingUpload: PropTypes.bool,
         isShowingWithoutId: PropTypes.bool,
         loadingState: PropTypes.oneOf(LoadingStates),
