@@ -94,7 +94,7 @@ export default defineConfig((env) => {
       rollupOptions: {
         external: [
           ...Object.keys(packageJSON.dependencies),
-          'react/jsx-runtime', 'react-dom/client'
+          'react/jsx-runtime', 'react-dom/client', 'react/jsx-dev-runtime', 'react/compiler-runtime'
         ]
       }
     },
